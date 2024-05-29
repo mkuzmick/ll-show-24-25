@@ -1,14 +1,14 @@
 "use client"
 
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const Login = () => {
   const router = useRouter();
 
   const handleLogin = () => {
-    if (typeof window !== 'undefined') { 
+   
       router.push('/api/auth/pinterest/start');
-    }
+    
   };
 
   return (
