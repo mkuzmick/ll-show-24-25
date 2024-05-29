@@ -1,10 +1,16 @@
 import { NextResponse } from 'next/server'
 import Airtable from 'airtable'
 
+type AirtableDataParams = {
+  baseId: string;
+  table: string;
+  field: string;
+  value: string;
+};
 
-const getAirtableData = async ({baseId, table, field, value}) => {
+const getAirtableData = async ({baseId, table, field, value}: AirtableDataParams) => {
     const base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base(baseId);
-    const theRecords = [];
+    const theRecords: object[] = [];
     console.log(`looking for ${value} in ${field} in table ${table}`)
     await base(table).select(
       {
@@ -20,7 +26,7 @@ const getAirtableData = async ({baseId, table, field, value}) => {
     return theRecords;
 }
 
-export async function GET( request, { params } ) {
+export async function GET( request: Request , { params } ) {
     try {
         const records = await getAirtableData({
             baseId: params.base,
