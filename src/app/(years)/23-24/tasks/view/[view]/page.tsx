@@ -8,7 +8,7 @@ const getTasksForView = async ({baseId, table, view}: {baseId: string, table: st
       maxRecords: 100,
       view: view,
     }
-  ).eachPage(function page(records: any[], next){
+  ).eachPage(function page(records: any[], next: () => void){
     theRecords.push(...records);
     next()
   })
