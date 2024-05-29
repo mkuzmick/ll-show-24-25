@@ -26,7 +26,15 @@ const getAirtableData = async ({baseId, table, field, value}: AirtableDataParams
     return theRecords;
 }
 
-export async function GET( request: Request , { params } ) {
+type ParamsType = {
+  base: string;
+  table: string;
+  field: string;
+  value: string;
+};
+
+
+export async function GET( request: Request , { params }: { params: ParamsType} ) {
     try {
         const records = await getAirtableData({
             baseId: params.base,
