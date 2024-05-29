@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from "framer-motion"
 
-export default function page() {
+export default function Page() {
   return (
     <div
         style={{

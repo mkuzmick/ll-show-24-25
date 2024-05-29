@@ -16,28 +16,28 @@ const AnimatedDiv = ({children, isVisible}: AnimatedDivProps) => {
         className="relative"
         style={{ height: "100px", width: "100px" }}
     >
-    <AnimatePresence>
-        
-        {isVisible && ( <motion.div
+        <AnimatePresence>
             
-            className="bg-gray-900 p-4 absolute inset-4 rounded-md"
-            style={{height: "100px", width: "100px"}}
-            initial={{ scale: 0, rotate: "0deg" }}
-            animate={{ scale: 1, rotate: "180deg" }}
-            transition={{ duration: 1, ease: "easeInOut"}}
-            exit={{ scale: 0, rotate: "0deg" }}
-        >
-            {children}
-        </motion.div>)}
-    
-       
-    </AnimatePresence>
+            {isVisible && ( <motion.div
+                
+                className="bg-gray-900 p-4 absolute inset-4 rounded-md"
+                style={{height: "100px", width: "100px"}}
+                initial={{ scale: 0, rotate: "0deg" }}
+                animate={{ scale: 1, rotate: "180deg", x: [0, 150, 0, -150, -250, 0] }}
+                transition={{ duration: 3, ease: "easeInOut"}}
+                exit={{ scale: 0, rotate: "0deg" }}
+            >
+                {children}
+            </motion.div>)}
+        
+        
+        </AnimatePresence>
     </div>
     
   )
 }
 
-export default function page() {
+export default function Page() {
     const [isVisible, setIsVisible] = useState(true);
     return (
         <div
@@ -48,7 +48,7 @@ export default function page() {
                 gap: "0.8rem",
             }}
         >
-            <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
+            <motion.button layout onClick={() => setIsVisible(!isVisible)}>Toggle</motion.button>
             <AnimatedDiv isVisible={isVisible}>test</AnimatedDiv>
         </div>
         )
