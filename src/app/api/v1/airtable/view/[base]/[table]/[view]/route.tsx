@@ -2,9 +2,16 @@ import { NextResponse } from 'next/server'
 import Airtable from 'airtable'
 
 
-const getAirtableData = async ({baseId, table, view}) => {
+type AirtableDataParams = {
+  baseId: string;
+  table: string;
+  view: string;
+};
+
+const getAirtableData = async ({baseId, table, view}: AirtableDataParams) => {
     const theRecords: any[] = [];
     console.log(`looking for ${view} in ${baseId} in table ${table}`)
+    const base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base(baseId);
     await base(table).select(
       {
         maxRecords: 100,
@@ -18,7 +25,9 @@ const getAirtableData = async ({baseId, table, view}) => {
     return theRecords;
 }
 
-export async function GET( request, { params } ) {
+type ParamsType = { base: string; table: string; view: string; };
+
+export async function GET( request: Request, { params }: {params: ParamsType} ) {
   
     try {
         const records = await getAirtableData({
