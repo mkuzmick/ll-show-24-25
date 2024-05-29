@@ -3,8 +3,7 @@ import Airtable from 'airtable'
 
 
 const getAirtableData = async ({baseId, table, view}) => {
-    const base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base(baseId);
-    const theRecords = [];
+    const theRecords: any[] = [];
     console.log(`looking for ${view} in ${baseId} in table ${table}`)
     await base(table).select(
       {

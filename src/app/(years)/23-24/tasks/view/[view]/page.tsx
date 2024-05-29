@@ -8,18 +8,18 @@ const getTasksForView = async ({baseId, table, view}: {baseId: string, table: st
       maxRecords: 100,
       view: view,
     }
-  ).eachPage(function page(records, next){
+  ).eachPage(function page(records: any[], next){
     theRecords.push(...records);
     next()
   })
-  .catch(err=>{console.error(err); return})
+  .catch((err: any)=>{console.error(err); return}) // Explicitly declare the type of the 'err' parameter as 'any'.
   return theRecords;
 }
 
 
 export default async function Page({ params }: { params: { view: string } }) {
   const data = await getTasksForView({
-    baseId: process.env.AIRTABLE_DO_YOUR_WORK_BASE,
+    baseId: process.env.AIRTABLE_DO_YOUR_WORK_BASE || "",
     table: "Tasks",
     view: params.view
   })
