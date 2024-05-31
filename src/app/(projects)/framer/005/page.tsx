@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <CenteredContainer>
       <div style={{ color: 'white', textAlign: 'center' }}>
-        <h1>Welcome to My Site</h1>
-        <p>This is a sample text over a video background.</p>
+        <h1 className='font-black text-9xl mix-blend-exclusion opacity-80 '>ll summer</h1>
+        <p>all the things.</p>
       </div>
     </CenteredContainer>
   );

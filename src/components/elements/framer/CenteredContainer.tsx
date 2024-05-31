@@ -43,7 +43,7 @@ const CenteredContainer = ({ children }: { children: ReactNode }) => {
           zIndex: -1,
         }}
       >
-        <source src="/videos/background-1.mp4" type="video/mp4" />
+        {/* <source src="/videos/background-1.mp4" type="video/mp4" /> */}
         <source src="/videos/background-1.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>

@@ -22,7 +22,7 @@ const AnimatedDiv = ({children, isVisible}: AnimatedDivProps) => {
             
             {isVisible && ( <motion.div
                 
-                className="bg-gray-900 p-4 absolute inset-4 rounded-md text-center flex items-center justify-center"
+                className="bg-gray-900 p-4 absolute inset-4 rounded-md text-center flex items-center justify-center opacity-50"
                 style={{height: "100px", width: "100px"}}
                 initial={{ scale: 0, rotate: "0deg" }}
                 animate={{ scale: 1, rotate: "180deg", x: [0, 150, 0, -150, -250, 0] }}

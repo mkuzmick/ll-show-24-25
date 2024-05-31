@@ -2,19 +2,12 @@
 
 import React from 'react'
 import { motion } from "framer-motion"
+import CenteredContainer from '@/components/elements/framer/CenteredContainer'
 
 export default function Page() {
   return (
-    <div
-        style={{
-            display: "grid",
-            placeContent: "center",
-            height: "100vh",
-            gap: "0.8rem",
-            
-        }}
-    >
-        framer test 001
+    <CenteredContainer>
+framer test 001
         <div style={{
             backgroundColor: "red",
         }}>
@@ -45,6 +38,8 @@ export default function Page() {
   drag="x"
   dragConstraints={{ left: -100, right: 100}}
         />
-    </div>
+    </CenteredContainer>
+        
+    
   )
 }
