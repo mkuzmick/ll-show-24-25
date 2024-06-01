@@ -22,7 +22,7 @@ export default function Home() {
     setBoxes([...boxes, newBox]);
   };
 
-  const bringToFront = (id) => {
+  const bringToFront = (id: number) => {
     setBoxes((prevBoxes) => {
       const currentMaxZIndex = Math.max(...prevBoxes.map(box => box.zIndex));
       return prevBoxes.map(box =>

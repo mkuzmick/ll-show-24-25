@@ -1,6 +1,17 @@
+"use client";
+
 import Draggable from "react-draggable";
 
-const DraggableBox = ({ title, content, onClick, zIndex }) => {
+
+interface DraggableBoxProps {
+  title: string;
+  content: string;
+  onClick: () => void;
+  zIndex: number;
+}
+
+
+const DraggableBox = ({ title, content, onClick, zIndex }: DraggableBoxProps) => {
   return (
     <Draggable>
       <div

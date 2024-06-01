@@ -24,10 +24,10 @@ export default function Home() {
             <div className="opacity-45 bg-red-600 h-6 w-10 ">/</div>
           </div>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-        <div class="bg-red-800 bg-opacity-50 backdrop-blur-md p-8 rounded-lg shadow-2xl">
-            <h1 class="text-3xl font-bold mb-4 opacity-90">Translucent Overlay</h1>
-            <p class="text-lg opacity-90">This is a slightly opaque translucent window on top of a looping video background.</p>
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+        <div className="bg-red-800 bg-opacity-50 backdrop-blur-md p-8 rounded-lg shadow-2xl">
+            <h1 className="text-3xl font-bold mb-4 opacity-90">Translucent Overlay</h1>
+            <p className="text-lg opacity-90">This is a slightly opaque translucent window on top of a looping video background.</p>
         </div>
     </div>
       </BackgroundVideo>

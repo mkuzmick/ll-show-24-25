@@ -1,7 +1,7 @@
 
 import { ReactNode } from "react";
 
-const BackgroundVideo = ({ children, webmVideoPath }: { children: ReactNode, webmVideoPath: String }) => {
+const BackgroundVideo = ({ children, webmVideoPath }: { children: ReactNode, webmVideoPath: string }) => {
 
   return (
     <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
