@@ -49,8 +49,10 @@ const CenteredContainer = ({ children }: { children: ReactNode }) => {
       </video>
       <div
         style={{
+          // position: "relative",
           display: "grid",
           placeContent: "center",
+          // width: "100%",
           height: "100%",
           zIndex: 1,
           gap: "0.8rem",

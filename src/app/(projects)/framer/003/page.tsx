@@ -26,6 +26,7 @@ export default function Page() {
             <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
             <AnimatedDiv isVisible={isVisible}>test</AnimatedDiv>
             <GestureTest>test</GestureTest>
+            
         </CenteredContainer>
     )
 }
