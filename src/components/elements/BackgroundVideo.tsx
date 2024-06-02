@@ -1,10 +1,10 @@
 
 import { ReactNode } from "react";
 
-const BackgroundVideo = ({ children, webmVideoPath }: { children: ReactNode, webmVideoPath: string }) => {
+const BackgroundVideo = ({ children, webmVideoPath }: { children?: ReactNode, webmVideoPath: string }) => {
 
   return (
-    <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+    <div style={{ position: "absolute", height: "100vh", width: "100vw", overflow: "hidden" }}>
       <video
         autoPlay
         loop
