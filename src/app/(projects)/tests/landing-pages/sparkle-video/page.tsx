@@ -1,5 +1,4 @@
 import BigText from "@/components/BigText";
-import InteractiveGradientBlobs from "@/components/backgrounds/InteractiveGradientBlobs";
 import BackgroundVideo from "@/components/elements/BackgroundVideo";
 import Image from "next/image";
 
@@ -8,12 +7,12 @@ export default function Home() {
     // <main className="flex items-center justify-center min-h-screen">
 <main className="relative min-h-screen overflow-hidden">
 <div className="fixed top-0 left-0 z-0 w-full h-full">
-        <InteractiveGradientBlobs />
+        <BackgroundVideo webmVideoPath="/videos/background-1.webm" />
       </div>
 
   <div className="relative z-10 flex flex-col items-center justify-center min-h-screen">
     <div className="bg-zinc-900 bg-opacity-10 backdrop-blur-md p-8 rounded-lg shadow-2xl">
-      <h1 className="font-black text-5xl sm:text-7xl md:text-9xl text-amber-300 mix-blend-hard-light opacity-90 drop-shadow-glow">ll show</h1>
+      <h1 className="font-black text-5xl sm:text-7xl md:text-9xl text-amber-300 mix-blend-hard-light opacity-90">ll show</h1>
     </div>
   </div>
 
